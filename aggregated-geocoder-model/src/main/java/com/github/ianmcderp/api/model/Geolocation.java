@@ -6,11 +6,19 @@ public class Geolocation {
     @JsonProperty("formatted_address")
     private final String formattedAddress;
 
-    public Geolocation(final String formattedAddress) {
+    @JsonProperty("address")
+    private Address address;
+
+    public Geolocation(final String formattedAddress, final Address address) {
         this.formattedAddress = formattedAddress;
+        this.address = address;
     }
 
     public String getFormattedAddress() {
-        return formattedAddress;
+        return this.formattedAddress;
+    }
+
+    public Address getAddress() {
+        return this.address;
     }
 }
